@@ -67,7 +67,7 @@
 		2200E9FA22FD661300E4E7ED /* MessageForwardAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageForwardAnimal.m; sourceTree = "<group>"; };
 		2200E9FB22FD661300E4E7ED /* NSNull+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+safe.h"; sourceTree = "<group>"; };
 		2200E9FC22FD661300E4E7ED /* MessageForwardPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageForwardPerson.h; sourceTree = "<group>"; };
-		2200EA0222FD675B00E4E7ED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2200EA0222FD675B00E4E7ED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = iOSAdvancedLearningDemo/README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +98,7 @@
 		2200E9B322FD65E400E4E7ED = {
 			isa = PBXGroup;
 			children = (
+				2200EA0222FD675B00E4E7ED /* README.md */,
 				2200E9BE22FD65E400E4E7ED /* iOSAdvancedLearningDemo */,
 				2200E9D722FD65E600E4E7ED /* iOSAdvancedLearningDemoTests */,
 				2200E9E222FD65E600E4E7ED /* iOSAdvancedLearningDemoUITests */,
@@ -129,7 +130,6 @@
 				2200E9CA22FD65E600E4E7ED /* LaunchScreen.storyboard */,
 				2200E9CD22FD65E600E4E7ED /* Info.plist */,
 				2200E9CE22FD65E600E4E7ED /* main.m */,
-				2200EA0222FD675B00E4E7ED /* README.md */,
 			);
 			path = iOSAdvancedLearningDemo;
 			sourceTree = "<group>";
