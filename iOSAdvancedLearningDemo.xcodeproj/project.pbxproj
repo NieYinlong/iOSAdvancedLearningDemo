@@ -15,6 +15,12 @@
 		2200E9CF22FD65E600E4E7ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200E9CE22FD65E600E4E7ED /* main.m */; };
 		2200E9D922FD65E600E4E7ED /* iOSAdvancedLearningDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200E9D822FD65E600E4E7ED /* iOSAdvancedLearningDemoTests.m */; };
 		2200E9E422FD65E600E4E7ED /* iOSAdvancedLearningDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200E9E322FD65E600E4E7ED /* iOSAdvancedLearningDemoUITests.m */; };
+		2200E9FD22FD661300E4E7ED /* MultithreadingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200E9F222FD661300E4E7ED /* MultithreadingVC.m */; };
+		2200E9FE22FD661300E4E7ED /* MessageForwardPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200E9F722FD661300E4E7ED /* MessageForwardPerson.m */; };
+		2200E9FF22FD661300E4E7ED /* NSNull+safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200E9F822FD661300E4E7ED /* NSNull+safe.m */; };
+		2200EA0022FD661300E4E7ED /* MessageForwardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200E9F922FD661300E4E7ED /* MessageForwardVC.m */; };
+		2200EA0122FD661300E4E7ED /* MessageForwardAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 2200E9FA22FD661300E4E7ED /* MessageForwardAnimal.m */; };
+		2200EA0322FD675C00E4E7ED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2200EA0222FD675B00E4E7ED /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,17 @@
 		2200E9DF22FD65E600E4E7ED /* iOSAdvancedLearningDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSAdvancedLearningDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2200E9E322FD65E600E4E7ED /* iOSAdvancedLearningDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSAdvancedLearningDemoUITests.m; sourceTree = "<group>"; };
 		2200E9E522FD65E600E4E7ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2200E9F222FD661300E4E7ED /* MultithreadingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultithreadingVC.m; sourceTree = "<group>"; };
+		2200E9F322FD661300E4E7ED /* MultithreadingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultithreadingVC.h; sourceTree = "<group>"; };
+		2200E9F522FD661300E4E7ED /* MessageForwardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageForwardVC.h; sourceTree = "<group>"; };
+		2200E9F622FD661300E4E7ED /* MessageForwardAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageForwardAnimal.h; sourceTree = "<group>"; };
+		2200E9F722FD661300E4E7ED /* MessageForwardPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageForwardPerson.m; sourceTree = "<group>"; };
+		2200E9F822FD661300E4E7ED /* NSNull+safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+safe.m"; sourceTree = "<group>"; };
+		2200E9F922FD661300E4E7ED /* MessageForwardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageForwardVC.m; sourceTree = "<group>"; };
+		2200E9FA22FD661300E4E7ED /* MessageForwardAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageForwardAnimal.m; sourceTree = "<group>"; };
+		2200E9FB22FD661300E4E7ED /* NSNull+safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+safe.h"; sourceTree = "<group>"; };
+		2200E9FC22FD661300E4E7ED /* MessageForwardPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageForwardPerson.h; sourceTree = "<group>"; };
+		2200EA0222FD675B00E4E7ED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +118,8 @@
 		2200E9BE22FD65E400E4E7ED /* iOSAdvancedLearningDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2200E9F122FD661300E4E7ED /* 多线程 */,
+				2200E9F422FD661300E4E7ED /* 消息转发 */,
 				2200E9BF22FD65E400E4E7ED /* AppDelegate.h */,
 				2200E9C022FD65E400E4E7ED /* AppDelegate.m */,
 				2200E9C222FD65E400E4E7ED /* ViewController.h */,
@@ -110,6 +129,7 @@
 				2200E9CA22FD65E600E4E7ED /* LaunchScreen.storyboard */,
 				2200E9CD22FD65E600E4E7ED /* Info.plist */,
 				2200E9CE22FD65E600E4E7ED /* main.m */,
+				2200EA0222FD675B00E4E7ED /* README.md */,
 			);
 			path = iOSAdvancedLearningDemo;
 			sourceTree = "<group>";
@@ -130,6 +150,30 @@
 				2200E9E522FD65E600E4E7ED /* Info.plist */,
 			);
 			path = iOSAdvancedLearningDemoUITests;
+			sourceTree = "<group>";
+		};
+		2200E9F122FD661300E4E7ED /* 多线程 */ = {
+			isa = PBXGroup;
+			children = (
+				2200E9F222FD661300E4E7ED /* MultithreadingVC.m */,
+				2200E9F322FD661300E4E7ED /* MultithreadingVC.h */,
+			);
+			path = "多线程";
+			sourceTree = "<group>";
+		};
+		2200E9F422FD661300E4E7ED /* 消息转发 */ = {
+			isa = PBXGroup;
+			children = (
+				2200E9F522FD661300E4E7ED /* MessageForwardVC.h */,
+				2200E9F622FD661300E4E7ED /* MessageForwardAnimal.h */,
+				2200E9F722FD661300E4E7ED /* MessageForwardPerson.m */,
+				2200E9F822FD661300E4E7ED /* NSNull+safe.m */,
+				2200E9F922FD661300E4E7ED /* MessageForwardVC.m */,
+				2200E9FA22FD661300E4E7ED /* MessageForwardAnimal.m */,
+				2200E9FB22FD661300E4E7ED /* NSNull+safe.h */,
+				2200E9FC22FD661300E4E7ED /* MessageForwardPerson.h */,
+			);
+			path = "消息转发";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +281,7 @@
 			files = (
 				2200E9CC22FD65E600E4E7ED /* LaunchScreen.storyboard in Resources */,
 				2200E9C922FD65E600E4E7ED /* Assets.xcassets in Resources */,
+				2200EA0322FD675C00E4E7ED /* README.md in Resources */,
 				2200E9C722FD65E400E4E7ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,9 +307,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2200E9FF22FD661300E4E7ED /* NSNull+safe.m in Sources */,
 				2200E9C422FD65E400E4E7ED /* ViewController.m in Sources */,
+				2200E9FE22FD661300E4E7ED /* MessageForwardPerson.m in Sources */,
 				2200E9CF22FD65E600E4E7ED /* main.m in Sources */,
+				2200EA0022FD661300E4E7ED /* MessageForwardVC.m in Sources */,
+				2200EA0122FD661300E4E7ED /* MessageForwardAnimal.m in Sources */,
 				2200E9C122FD65E400E4E7ED /* AppDelegate.m in Sources */,
+				2200E9FD22FD661300E4E7ED /* MultithreadingVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
