@@ -9,7 +9,10 @@
 #import "MultithreadingVC.h"
 
 @interface MultithreadingVC ()
-
+{
+    int _ticketNum;
+    dispatch_semaphore_t _semaphoreLock;
+}
 @end
 
 @implementation MultithreadingVC
@@ -23,7 +26,8 @@
 //    [self dispatchGroupNotify]; // 线程组
 //    [self dispatchGroupWait];
 //    [self groupEnterAndLeave];
-    [self semaphoreSync];
+//    [self semaphoreSync];
+    [self semaphoreLockExample];
 }
 
 #pragma mark - 异步 + 并发
@@ -181,13 +185,12 @@
 /**
  * semaphore 线程同步
  */
-- (void)semaphoreSync{
+- (void)semaphoreSync {
     NSLog(@"semaphore---begin");
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     __block int num = 0;
     dispatch_async(queue, ^{
-        // 追加任务1
         [NSThread sleepForTimeInterval:2];
         NSLog(@"1---%@",[NSThread currentThread]);
         num = 200;
@@ -205,10 +208,62 @@
      */
     
     /*
-     总结:
      
+     以上先执行num=200, 才会进入到NSLog语句;
+     
+     总结:
+     dispatch_semaphore_create创建一个信号量, 初始化0(必须>=0, 否则该方法返回NULL)
+     dispatch_semaphore_wait: 当dsema为0的时候,dispatch_semaphore_wait下面的语句不会执行, 当dsema>0的时候, 下面的语句才会执行, 并且使dsema减去1;
+     dispatch_semaphore_signal: 发送一个信号量使dsema加1
      */
-    
 }
+
+
+/**
+ Dispatch Semaphore 为线程加锁
+ */
+- (void)semaphoreLockExample {
+    _ticketNum = 50;
+    _semaphoreLock =  dispatch_semaphore_create(1);
+    dispatch_async(dispatch_queue_create("com.nyl", DISPATCH_QUEUE_CONCURRENT), ^{
+        [self saleTicketWithSave];
+    });
+    
+    dispatch_async(dispatch_queue_create("com.nyl2", DISPATCH_QUEUE_CONCURRENT), ^{
+        [self saleTicketWithSave];
+    });
+}
+
+- (void)saleTicketWithSave {
+    while (1) {
+        // 类似加锁
+        dispatch_semaphore_wait(_semaphoreLock, DISPATCH_TIME_FOREVER);
+        if (_ticketNum > 0) {
+            _ticketNum--;
+            [NSThread sleepForTimeInterval:0.2];
+            NSLog(@"剩余 %d 张", _ticketNum);
+        } else {
+            NSLog(@"全部卖完");
+            // 类似解锁
+            dispatch_semaphore_signal(_semaphoreLock);
+            break;
+        }
+        // 类似解锁
+        dispatch_semaphore_signal(_semaphoreLock);
+    }
+    /*
+     2019-08-11 11:12:10.413187+0800 iOSAdvancedLearningDemo[6822:795356] 剩余 49 张
+     2019-08-11 11:12:10.618280+0800 iOSAdvancedLearningDemo[6822:795357] 剩余 48 张
+     ...
+     ...
+     2019-08-11 11:12:19.983966+0800 iOSAdvancedLearningDemo[6822:795357] 剩余 2 张
+     2019-08-11 11:12:20.185316+0800 iOSAdvancedLearningDemo[6822:795356] 剩余 1 张
+     2019-08-11 11:12:20.387908+0800 iOSAdvancedLearningDemo[6822:795357] 剩余 0 张
+     2019-08-11 11:12:20.388169+0800 iOSAdvancedLearningDemo[6822:795356] 全部卖完
+     2019-08-11 11:12:20.388169+0800 iOSAdvancedLearningDemo[6822:795356] 全部卖完
+     */
+}
+
+
 
 @end
